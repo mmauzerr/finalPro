@@ -1,6 +1,30 @@
+/*************************************************************
+**********************  Text  Overrides  *********************
+**************************************************************/
+
 html {
   overflow: hidden;
+  //background-color: transparent;
 }
+
+.is-muted {
+  color: $grey-light;
+}
+a.is-muted:hover {
+  color: $grey;
+}
+label.label {
+  color: #676767;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.925em;
+}
+
+h1.title {
+  color: rgba(78, 78, 78, 0.8);
+}
+/*************************************************************
+********************  DropDown  Override  ********************
+**************************************************************/
 
 .dropdown {
   position: relative;

@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Final Project</title>
-
+    <link rel="shortcut icon" href="{{ asset('images/favicon.png')}}">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -18,8 +18,8 @@
         <nav class="nav has-shadow">
             <div class="container">
                 <div class="nav-left">
-                    <a class="nav-item" href="{{route('home')}}">
-                       <img class="logo" src="{{asset('images/logo.png')}}" alt="FinalPro Logo">
+                    <a class="nav-item is-paddingless" href="{{ route('home') }}">
+                       <img class="logo" src="{{ asset('images/logo.png') }}" alt="FinalPro Logo">
                     </a>
                     <a href="#" class="nav-item is-tab is-hidden-mobile m-l-10">Learn</a>
                     <a href="#" class="nav-item is-tab is-hidden-mobile">Discuss</a>
@@ -27,9 +27,9 @@
                 </div>
 
                 <div class="nav-right" style="overflow: visible">
-                    @if (!Auth::guest())
-                        <a href="#" class="nav-item is-tab">Log In</a>
-                        <a href="#" class="nav-item is-tab">Join the Community</a>
+                    @if (Auth::guest())
+                        <a href="{{ route('login') }}" class="nav-item is-tab">Log In</a>
+                        <a href="{{ route('register') }}" class="nav-item is-tab">Join the Community</a>
                     @else
                         <button class="dropdown is-aligned-right nav-item is-tab">
                             Hey Nenad <span class="icon"><i class="fa fa-caret-down"></i></span>
