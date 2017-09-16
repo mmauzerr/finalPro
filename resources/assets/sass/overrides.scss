@@ -100,10 +100,14 @@ button.nav-item {
 
   }
 }
-
 .nav {
   height: 4.6rem;
 }
 .nav-item img {
   max-height: 3.7rem;
+}
+
+/***  Remove outline color from profile button - nenMas ***/
+.nav-item button.is-tab, button.nav-item.is-tab:focus {
+  outline: none;
 }

@@ -17,14 +17,12 @@ return [
         'author' => [
             'profile' => 'r,u'
         ],
-
         'supporter' => [
             'profile' => 'r,u'
         ],
         'contributor' => [
             'profile' => 'r,u'
         ],
-
         'subscriber' => [
             'profile' => 'r,u'
         ],
