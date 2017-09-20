@@ -8,7 +8,10 @@ Vue.use(Buefy);
 
 var app = new Vue({
     el: '#app',
-    data: {}
+    data:{
+        auto_password: true,
+        password_options: 'keep'
+    }
 });
 
 $('button.dropdown').hover(function(){

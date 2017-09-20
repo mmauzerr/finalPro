@@ -5,3 +5,23 @@
   background-color: white;
   overflow-y: auto;
 }
+
+.management-area {
+  position: absolute;
+  top: 4rem;
+  left: 200px;
+  right: 0;
+}
+
+.flex-container {
+  margin: 10px 25px;
+}
+
+.table {
+  width: 100%;
+}
+
+.card .paging {
+  text-shadow: 1px 1px 9px gray;
+  margin:15px 20px;
+}
