@@ -1,5 +1,5 @@
 <div class="side-menu">
-    <aside class="menu m-t-30 p-l-10">
+    <aside class="menu m-t-50 p-l-10">
         <p class="menu-label">
             General
         </p>
@@ -12,7 +12,7 @@
         </p>
         <ul class="menu-list">
             <li><a href="{{route('users.index')}}">Manage Users</a></li>
-            <li><a href="#">Roles &amp; Permission</a></li>
+            <li><a href="{{ route('permissions.index') }}">Roles &amp; Permission</a></li>
         </ul>
     </aside>
 </div>

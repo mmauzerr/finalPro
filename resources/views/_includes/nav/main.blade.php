@@ -2,7 +2,7 @@
     <div class="container">
         <div class="nav-left">
             <a class="nav-item is-paddingless" href="{{ route('home') }}">
-                <img src="{{asset('images/logo.png')}}" alt="FinalPro logo">
+                <img style="margin-left: -10px" src="{{asset('images/logo.png')}}" alt="FinalPro logo">
             </a>
             <a class="nav-item is-tab is-hidden-mobile m-l-10">Learn</a>
             <a class="nav-item is-tab is-hidden-mobile">Discuss</a>
@@ -22,7 +22,7 @@
                 <a href="{{route('register')}}" class="nav-item is-tab">Join the Community</a>
             @else
                 <button class="dropdown is-aligned-right nav-item is-tab" >
-                    <i>Hey<b>&nbsp;&nbsp;{{ Auth::user()->name }}</b></i>
+                    <i>Hey  <b>&nbsp;&nbsp;{{ Auth::user()->name }}</b></i>
                     <ul class="dropdown-menu" style="overflow: visible;">
                         <li><a href="#">
                   <span class="icon">

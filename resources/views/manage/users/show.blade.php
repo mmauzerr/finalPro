@@ -4,7 +4,7 @@
     <div class="flex-container">
         <div class="columns m-t-30">
             <div class="column">
-                <h1 class="title m-l-20 m-t-5">View Details: <i class="is-muted">{{$user->name}}</i> </h1>
+                <h1 class="title m-l-20 m-t-5">View Details: <br /><i class="is-muted">{{$user->name}}</i> </h1>
             </div>
 
             <div class="column">

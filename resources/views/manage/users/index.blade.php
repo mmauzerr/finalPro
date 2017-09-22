@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="flex-container">
-        <div class="columns m-t-10">
+        <div class="columns m-t-30">
             <div class="column">
                 <h1 class="title">Manage Users</h1>
             </div>
@@ -22,9 +22,9 @@
                         <th>Email</th>
                         <th>Date Created</th>
                         <th class="has-text-right">
-                            <div class="m-r-15">
-                                <i class="fa fa-eye">&nbsp;&nbsp;&nbsp;</i>
-                                <i class="fa fa-ambulance">&nbsp;&nbsp;&nbsp;</i>
+                            <div class="m-r-0">
+                                <i class="fa fa-eye">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i>
+                                <i class="fa fa-ambulance">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i>
                             </div>
                         </th>
                     </tr>

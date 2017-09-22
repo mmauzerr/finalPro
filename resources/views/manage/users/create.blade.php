@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="flex-container">
-        <div class="columns m-t-20">
+        <div class="columns m-t-30">
             <div class="column">
                 <h1 class="title">Create New Users</h1>
             </div>
