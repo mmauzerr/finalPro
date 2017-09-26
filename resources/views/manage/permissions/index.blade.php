@@ -13,7 +13,8 @@
                 </a>
             </div>
         </div>
-        <hr class="m-t-0">
+        <hr class="m-t-0"/>
+
         <div class="card">
             <div class="card-content">
                 <table class="table is-narrow">
@@ -32,8 +33,8 @@
                                 <td>{{$permission->name}}</td>
                                 <td>{{$permission->description}}</td>
                                 <td class="has-text-right">
-                                    <a href="{{route('permissions.show',$permission->id)}}" class="button is-outlined is-small m-r-10">View</a>
-                                    <a href="{{route('permissions.edit',$permission->id)}}" class="button is-outlined is-small">Edit</a>
+                                    <a href="{{ route('permissions.show',$permission->id )}}" class="button is-outlined is-small m-r-10">View</a>
+                                    <a href="{{ route('permissions.edit',$permission->id )}}" class="button is-outlined is-small">Edit</a>
                                 </td>
                             </tr>
                         @endforeach
@@ -41,6 +42,8 @@
                 </table>
             </div>
         </div>
+
         {{$permissions->render()}} {{-- this must be included or pagination won't work --}}
+
     </div>
 @endsection

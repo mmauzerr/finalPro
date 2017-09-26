@@ -17,5 +17,10 @@
                 </div>
             </div>
         </div>
+
     </div>
+    <div class="m-t-50 m-r-100" align="center">
+        <a href="{{route('users.index')}}" class="button is-primary">START</a>
+    </div>
+
 @endsection

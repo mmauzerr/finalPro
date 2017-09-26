@@ -7,7 +7,7 @@
                 <h1 class="title m-l-20 m-t-5">View Details: <br /><i class="is-muted">{{$user->name}}</i> </h1>
             </div>
 
-            <div class="column">
+            <div class="column m-t-30">
                 <a href="{{ route('users.edit',$user->id)}}" class="button is-primary is-pulled-right">
                     <i class="fa fa-user m-r-10"></i>Edit User
                 </a>
