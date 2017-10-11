@@ -1,14 +1,13 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
 use App\Role;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Hash;
-
-
+use DB;
+use Session;
+use Hash;
+use Input;
 class UserController extends Controller
 {
     /**
@@ -21,7 +20,6 @@ class UserController extends Controller
         $users = User::orderBy('id', 'desc')->paginate(3);
         return view('manage.users.index')->withUsers($users);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -29,9 +27,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('manage.users.create');
+        $roles = Role::all();
+        return view('manage.users.create')->withRoles($roles);
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -40,21 +38,20 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'name'=>'required|max:255',
-            'email'=>'required|email|unique:users'
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'email' => 'required|email|unique:users'
         ]);
-
         if (!empty($request->password)) {
             $password = trim($request->password);
         } else {
             # set the manual password
-            $lenght = 10;
-            $keyspace = "123456789abcdefghijklmnoprstuvwxyzABCDEFGHIJKLMNPQRSTVWXYZ";
+            $length = 10;
+            $keyspace = '123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ';
             $str = '';
             $max = mb_strlen($keyspace, '8bit') - 1;
-            for ($i = 0; $i< $lenght; ++$i) {
-                $str .= $keyspace[random_int(0,$max)];
+            for ($i = 0; $i < $length; ++$i) {
+                $str .= $keyspace[random_int(0, $max)];
             }
             $password = $str;
         }
@@ -64,15 +61,12 @@ class UserController extends Controller
         $user->password = Hash::make($password);
         $user->save();
 
-        if ($user->save()) {
-            return redirect()->route('users.show', $user->id);
-        } else {
-            Session::flash('danger','Sorry a problem occurred ...');
-            return redirect()->route('users.show');
+        if ($request->roles) {
+            $user->syncRoles(explode(',', $request->roles));
         }
+        return redirect()->route('users.show', $user->id);
 
     }
-
     /**
      * Display the specified resource.
      *
@@ -81,10 +75,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::findOrFail($id);
-        return view('manage.users.show')->withUser($user);
+        $user = User::where('id', $id)->with('roles')->first();
+        return view("manage.users.show")->withUser($user);
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -93,10 +86,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::findOrFail($id);
-        return view('manage.users.edit')->withUser($user);
+        $roles = Role::all();
+        $user = User::where('id', $id)->with('roles')->first();
+        return view("manage.users.edit")->withUser($user)->withRoles($roles);
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -112,10 +105,9 @@ class UserController extends Controller
         ]);
 
         $user = User::findOrFail($id);
-
         $user->name = $request->name;
         $user->email = $request->email;
-        if ( $request->password_options == 'auto' ) {
+        if ($request->password_options == 'auto') {
             $length = 10;
             $keyspace = '123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ';
             $str = '';
@@ -129,14 +121,10 @@ class UserController extends Controller
         }
         $user->save();
 
-        if ( $user->save()) {
-            return redirect()->route('users.show', $id);
-        } else {
-            Session::flash('error','There was a problem saving the updated user info to database. Tray again.');
-            return redirect()->route('users.show', $id);
-        }
-    }
+        $user->syncRoles(explode(',', $request->roles));
+        return redirect()->route('users.show', $id);
 
+    }
     /**
      * Remove the specified resource from storage.
      *

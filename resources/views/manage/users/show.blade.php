@@ -2,37 +2,48 @@
 
 @section('content')
     <div class="flex-container">
-        <div class="columns m-t-30">
+        <div class="columns m-t-10">
             <div class="column">
-                <h1 class="title m-l-20 m-t-5">View Details: <br /><i class="is-muted">{{$user->name}}</i> </h1>
-            </div>
+                <h1 class="title">View User Details</h1>
+            </div> <!-- end of column -->
 
-            <div class="column m-t-30">
-                <a href="{{ route('users.edit',$user->id)}}" class="button is-primary is-pulled-right">
-                    <i class="fa fa-user m-r-10"></i>Edit User
-                </a>
+            <div class="column">
+                <a href="{{route('users.edit', $user->id)}}" class="button is-primary is-pulled-right"><i class="fa fa-user m-r-10"></i> Edit User</a>
             </div>
         </div>
-
         <hr class="m-t-0">
 
         <div class="columns">
             <div class="column">
-                <div class="field ">
-                    <label for="name" class="m-l-15">Name</label>
+                <div class="field">
+                    <label for="name" class="label">Name</label>
                     <pre>{{$user->name}}</pre>
                 </div>
 
                 <div class="field">
-                    <label for="email" class="m-l-15">Email</label>
-                    <pre>{{$user->email}}</pre>
+                    <div class="field">
+                        <label for="email" class="label">Email</label>
+                        <pre>{{$user->email}}</pre>
+                    </div>
                 </div>
 
                 <div class="field">
-                    <label for="created_at" class="m-l-15">Created At</label>
-                    <pre>{{$user->created_at->toFormattedDateString()}}</pre>
+                    <div class="field">
+                        <label for="email" class="label">Roles</label>
+                        <ul>
+                            {{$user->roles->count() == 0 ? 'This user has not been assigned any roles yet' : ''}}
+                            @foreach ($user->roles as $role)
+                                <li>{{$role->display_name}} ({{$role->description}})</li>
+                            @endforeach
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    {{--<script type="application/javascript">--}}
+        {{--var perm = [];--}}
+        {{--var rols = []--}}
+    {{--</script>--}}
 @endsection

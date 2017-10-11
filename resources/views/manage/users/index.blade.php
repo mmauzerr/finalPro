@@ -50,4 +50,8 @@
         {{ $users->render() }}
 
     </div>
+    {{--<script type="application/javascript">--}}
+        {{--var perm = [];--}}
+        {{--var rols = [];--}}
+    {{--</script>--}}
 @endsection

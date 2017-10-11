@@ -8,21 +8,29 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Final Project</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
     <link rel="shortcut icon" href="{{ asset('images/favicon.png')}}">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     @yield('styles')
 </head>
 <body>
 
 @include('_includes.nav.main')
-    <div id="app">
-        @yield('content')
-    </div>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    @yield('scripts')
+<div id="app">
+@yield('content')
+</div>
+
+<!-- Scripts -->
+<script>
+    var perm = '';
+    var rols = '';
+</script>
+
+<script src="{{ asset('js/app.js') }}"></script>
+
+@yield('scripts')
 </body>
 </html>

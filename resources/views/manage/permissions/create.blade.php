@@ -73,11 +73,10 @@
                         <div class="column">
                             <table class="table" v-if="resource.length >= 3">
                                 <thead>
-                                    <th>Name</th>
-                                    <th>Slug</th>
-                                    <th>Description</th>
+                                <th>Name</th>
+                                <th>Slug</th>
+                                <th>Description</th>
                                 </thead>
-
                                 <tbody>
                                 <tr v-for="item in crudSelected">
                                     <td v-text="crudName(item)"></td>
@@ -95,4 +94,8 @@
         </div>
 
     </div> <!-- end of .flex-container -->
+    {{--<script type="application/javascript">--}}
+        {{--var perm = [];--}}
+        {{--var rols = [];--}}
+    {{--</script>--}}
 @endsection

@@ -46,4 +46,8 @@
         {{$permissions->render()}} {{-- this must be included or pagination won't work --}}
 
     </div>
+    {{--<script type="application/javascript">--}}
+        {{--var perm = [];--}}
+        {{--var rols = [];--}}
+    {{--</script>--}}
 @endsection

@@ -36,4 +36,8 @@
             </div>
         </div>
     </div>
+    {{--<script type="application/javascript">--}}
+        {{--var perm = [];--}}
+        {{--var rols = [];--}}
+    {{--</script>--}}
 @endsection

@@ -2,28 +2,31 @@
 
 @section('content')
     <div class="flex-container">
-        <div class="columns m-t-30">
+        <div class="columns m-t-10">
             <div class="column">
-                <h1 class="title">Edit User: <i class="is-muted">{{ $user->name }}</i> </h1>
+                <h1 class="title">Edit User</h1>
             </div>
         </div>
-        <div class="columns" >
-            <div class="column">
+        <hr class="m-t-0">
 
-                <form action="{{route('users.update', $user->id)}}" method="POST">
-                    {{method_field('PUT')}}
-                    {{csrf_field()}}
+        <form action="{{route('users.update', $user->id)}}" method="POST">
+
+            {{ method_field('PUT') }}
+            {{ csrf_field() }}
+
+            <div class="columns">
+                <div class="column">
                     <div class="field">
-                        <label for="name">Name</label>
+                        <label for="name" class="label">Name:</label>
                         <p class="control">
-                            <input id="name" type="text" class="input" name="name" value="{{$user->name}}">
+                            <input type="text" class="input" name="name" id="name" value="{{$user->name}}">
                         </p>
                     </div>
 
                     <div class="field">
-                        <label for="email">Email</label>
+                        <label for="email" class="label">Email:</label>
                         <p class="control">
-                            <input id="email" type="text" class="input" name="email" value="{{$user->email}}">
+                            <input type="text" class="input" name="email" id="email" value="{{$user->email}}">
                         </p>
                     </div>
 
@@ -38,19 +41,38 @@
                             </div>
                             <div class="field">
                                 <b-radio name="password_options" value="manual">Manually Set New Password</b-radio>
-                                <p class="control">
-                                    <input type="text" class="input" name="password" id="password" v-if="password_options == 'manual'" placeholder="Manually give a password to this user">
-                                </p>
                             </div>
+                            <p class="control">
+                                <input type="text" class="input" name="password" id="password" v-if="password_options == 'manual'" placeholder="Manually give a password to this user">
+                            </p>
                         </b-radio-group>
-
                     </div>
+                </div> <!-- end of .column -->
 
-                    <button class="button is-primary m-t-10">Edit User</button>
+                <div class="column">
+                    <label for="roles" class="label">Roles:</label>
+                    <input type="hidden" name="roles" :value="rolesSelected" />
 
-                </form>
+                    <b-checkbox-group v-model="rolesSelected">
+                        @foreach ($roles as $role)
+                            <div class="field">
+                                <b-checkbox :custom-value="{{$role->id}}">
+                                    {{$role->display_name}}
+                                </b-checkbox>
+                            </div>
+                        @endforeach
+                    </b-checkbox-group>
+                </div>
             </div>
-        </div>
-        <hr class="m-t-0">
-    </div>
+
+            <button class="button is-primary" style="width: 200px;">Edit User</button>
+        
+        </form>
+
+    </div> <!-- end of .flex-container -->
+    <script type="application/javascript">
+        var rols = {!! $user->roles->pluck('id') !!};
+        var perm = [];
+    </script>
 @endsection
+

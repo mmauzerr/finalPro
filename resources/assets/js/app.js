@@ -4,16 +4,25 @@ window.Vue = require('vue');
 import Buefy from 'buefy'
 
 Vue.use(Buefy);
-//Vue.component('example', require('./components/Example.vue'));
 
-var app = new Vue({
+// Profile right nav-menu toggle OPEN|CLOSE class
+$('button.dropdown').hover(function(){
+    $(this).toggleClass("is-open");
+});
+
+var app= new Vue({
+
     el: '#app',
-    data:{
-        auto_password: true,
+    data: {
+
+        auto_password: false,
         password_options: 'keep',
         permissionType: 'basic',
         resource: '',
-        crudSelected: ['create', 'read', 'update', 'delete']
+        crudSelected: ['create', 'read', 'update', 'delete'],
+        rolesSelected: rols,
+        permissionsSelected: perm
+
     },
     methods: {
         crudName: function(item) {
@@ -26,8 +35,6 @@ var app = new Vue({
             return "Allow a User to " + item.toUpperCase() + " a " + app.resource.substr(0,1).toUpperCase() + app.resource.substr(1);
         }
     }
+
 });
 
-$('button.dropdown').hover(function(){
-    $(this).toggleClass("is-open");
-});

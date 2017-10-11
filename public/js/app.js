@@ -790,16 +790,25 @@ window.Vue = __webpack_require__(34);
 
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a);
-//Vue.component('example', require('./components/Example.vue'));
+
+// Profile right nav-menu toggle OPEN|CLOSE class
+$('button.dropdown').hover(function () {
+    $(this).toggleClass("is-open");
+});
 
 var app = new Vue({
+
     el: '#app',
     data: {
-        auto_password: true,
+
+        auto_password: false,
         password_options: 'keep',
         permissionType: 'basic',
         resource: '',
-        crudSelected: ['create', 'read', 'update', 'delete']
+        crudSelected: ['create', 'read', 'update', 'delete'],
+        rolesSelected: rols,
+        permissionsSelected: perm
+
     },
     methods: {
         crudName: function crudName(item) {
@@ -812,10 +821,7 @@ var app = new Vue({
             return "Allow a User to " + item.toUpperCase() + " a " + app.resource.substr(0, 1).toUpperCase() + app.resource.substr(1);
         }
     }
-});
 
-$('button.dropdown').hover(function () {
-    $(this).toggleClass("is-open");
 });
 
 /***/ }),

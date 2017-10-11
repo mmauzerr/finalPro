@@ -46,4 +46,8 @@
         <hr class="m-t-0">
 
     </div>
+    {{--<script type="application/javascript">--}}
+        {{--var perm = [];--}}
+        {{--var rols = [];--}}
+    {{--</script>--}}
 @endsection
