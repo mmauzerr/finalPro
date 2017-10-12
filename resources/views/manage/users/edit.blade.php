@@ -72,6 +72,7 @@
     </div> <!-- end of .flex-container -->
     <script type="application/javascript">
         var rols = {!! $user->roles->pluck('id') !!};
+        var autopass = false;
         var perm = [];
     </script>
 @endsection

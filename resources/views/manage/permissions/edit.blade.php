@@ -41,8 +41,9 @@
             <button class="button is-primary">Save Changes</button>
         </form>
     </div>
-    {{--<script type="application/javascript">--}}
-        {{--var perm = [];--}}
-        {{--var rols = [];--}}
-    {{--</script>--}}
+    <script type="application/javascript">
+        var perm = [];
+        var autopass = false;
+        var rols = [];
+    </script>
 @endsection

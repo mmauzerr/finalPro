@@ -78,6 +78,7 @@
 @section('checkbox')
     <script type="application/javascript">
         var rols = [];
+        var autopass = false;
         var perm = {!!($role->permissions->pluck('id'))!!};
     </script>
     @yield('checkbox')

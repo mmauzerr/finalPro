@@ -36,7 +36,20 @@
                         </p>
                     </div>
                 </div> <!-- end of .column -->
+                <div class="column">
+                    <label for="roles" class="label">Roles:</label>
+                    <input type="hidden" name="roles" :value="rolesSelected" />
 
+                    <b-checkbox-group v-model="rolesSelected">
+                        @foreach ($roles as $role)
+                            <div class="field">
+                                <b-checkbox :custom-value="{{$role->id}}">
+                                    {{$role->display_name}}
+                                </b-checkbox>
+                            </div>
+                        @endforeach
+                    </b-checkbox-group>
+                </div>
             </div>
 
             <button class="button is-success m-t-10">Create User</button>
@@ -46,8 +59,9 @@
         <hr class="m-t-0">
 
     </div>
-    {{--<script type="application/javascript">--}}
-        {{--var perm = [];--}}
-        {{--var rols = [];--}}
-    {{--</script>--}}
+    <script type="application/javascript">
+        var perm = [];
+        var autopass = true;
+        var rols = [{!! old('roles') ? old('roles') : '' !!}];
+    </script>
 @endsection

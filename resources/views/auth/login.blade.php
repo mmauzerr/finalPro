@@ -9,7 +9,9 @@
                     <h1 class="title">Log In</h1>
 
                     <form action="{{route('login')}}" method="POST" role="form">
+
                         {{csrf_field()}}
+
                         <div class="field">
                             <label for="email" class="label">Email Address</label>
                             <p class="control">

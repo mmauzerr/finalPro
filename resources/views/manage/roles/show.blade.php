@@ -44,8 +44,9 @@
             </div>
         </div>
     </div>
-    {{--<script type="application/javascript">--}}
-        {{--var perm = [];--}}
-        {{--var rols = [];--}}
-    {{--</script>--}}
+    <script type="application/javascript">
+        var perm = [];
+        var rols = [];
+        var autopass = false;
+    </script>
 @endsection

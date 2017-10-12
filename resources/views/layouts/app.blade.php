@@ -20,13 +20,14 @@
 @include('_includes.nav.main')
 
 <div id="app">
-@yield('content')
+    @yield('content')
 </div>
 
 <!-- Scripts -->
 <script>
     var perm = '';
     var rols = '';
+    var autopass = false;
 </script>
 
 <script src="{{ asset('js/app.js') }}"></script>
