@@ -54,7 +54,7 @@
                                     <b-checkbox-group v-model="permissionsSelected">
                                         @foreach ($permissions as $permission)
                                             <div class="field">
-                                                <b-checkbox :custom-value="{{ $permission->id }}">
+                                                <b-checkbox :custom-value="{{ $permission->id }}" >
                                                     {{$permission->display_name}}
                                                     <em>({{$permission->description}})</em>
                                                 </b-checkbox>
@@ -67,6 +67,11 @@
                     </div>
 
                     <button class="button is-primary">Save Changes to Role</button>
+                    <a href="{{route('roles.index')}}" class="button is-primary  m-r-10">
+                        <i class="fa fa-user-plus m-r-10"></i>
+                        Back
+                    </a>
+
                 </div>
             </div>
         </form>

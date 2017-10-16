@@ -22,5 +22,10 @@
     <div class="m-t-50 m-r-100" align="center">
         <a href="{{route('users.index')}}" class="button is-primary">START</a>
     </div>
+    <script type="application/javascript">
+        var autopass = false;
+        var rols = '';
+        var perm = [];
+    </script>
 
 @endsection

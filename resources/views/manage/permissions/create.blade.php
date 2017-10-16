@@ -87,8 +87,10 @@
                             </table>
                         </div>
                     </div>
-
-                    <button class="button is-success">Create Permission</button>
+                    <div class="column" style="margin-left: -10px">
+                        <button class="button is-primary m-r-5">Create Permission</button>
+                        <a href="{{route('permissions.index')}}" class="button is-primary">Back</a>
+                    </div>
                 </form>
             </div>
         </div>

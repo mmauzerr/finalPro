@@ -52,7 +52,8 @@
                 </div>
             </div>
 
-            <button class="button is-success m-t-10">Create User</button>
+            <button class="button is-primary m-r-10">Create User</button>
+            <a href="{{route('users.index')}}" class="button is-primary">Back</a>
 
         </form>
 

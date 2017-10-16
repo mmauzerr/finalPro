@@ -4,7 +4,7 @@
     <div class="flex-container">
         <div class="columns m-t-10">
             <div class="column">
-                <h1 class="title">Edit User</h1>
+                <h1 class="title">Edit User: <em class="is-muted">{{ $user->name}}</em></h1>
             </div>
         </div>
         <hr class="m-t-0">
@@ -64,16 +64,19 @@
                     </b-checkbox-group>
                 </div>
             </div>
+            <div class="m-t-50 m-r-100" align="left">
+                <button class="button is-primary m-r-5" style="width: 200px;">Save Changes</button>
+                <a href="{{route('users.index')}}" class="button is-primary">Back</a>
+            </div>
 
-            <button class="button is-primary" style="width: 200px;">Edit User</button>
-        
         </form>
-
     </div> <!-- end of .flex-container -->
-    <script type="application/javascript">
-        var rols = {!! $user->roles->pluck('id') !!};
-        var autopass = false;
-        var perm = [];
-    </script>
 @endsection
 
+@section('checkbox')
+    <script type="application/javascript">
+        var rols = {{$user->roles->pluck('id')}};
+        var perm = [];
+        var autopass = false;
+    </script>
+    @yield('checkbox')

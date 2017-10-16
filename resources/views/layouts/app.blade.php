@@ -17,21 +17,21 @@
 </head>
 <body>
 
-@include('_includes.nav.main')
+    @include('_includes.nav.main')
 
-<div id="app">
-    @yield('content')
-</div>
+    <div id="app">
+        @yield('content')
+    </div>
+
+    <script src="{{ asset('js/app.js') }}"></script>
 
 <!-- Scripts -->
-<script>
-    var perm = '';
-    var rols = '';
-    var autopass = false;
-</script>
+    <script type="application/javascript">
+        var perm = [];
+        var rols = '';
+        var autopass = false;
+    </script>
 
-<script src="{{ asset('js/app.js') }}"></script>
-
-@yield('scripts')
+    @yield('scripts')
 </body>
 </html>

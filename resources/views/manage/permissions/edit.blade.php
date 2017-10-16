@@ -3,9 +3,9 @@
 @section('content')
     <div class="flex-container">
         <div class="columns m-t-30">
-            <div class="column">
-                <h1 class="title">View Permission Details</h1>
-            </div>
+
+            <h1 class="title m-t-20">Edit Permission: <em class="is-muted">{{$permission->display_name}}</em></h1>
+
             <div class="column">
                 <a href="{{ route('permissions.edit', $permission->id) }}" class="button is-primary is-pulled-right"><i class="fa fa-edit m-r-10"></i>Edit Permission</a>
             </div>
@@ -36,7 +36,9 @@
 
             <div class="field">
                 <label for="description" class="label">Description</label>
-                <p class="control"><input type="text" class="input" name="description" id="description" placeholder="Describe permission functionality"></p>
+                <p class="control">
+                    <input type="text" class="input" name="description" id="description" placeholder="{{$permission->description}}">
+                </p>
             </div>
             <button class="button is-primary">Save Changes</button>
         </form>

@@ -18,7 +18,7 @@
             <div class="noting">
                 <a href="{{route('roles.index')}}" class="button is-primary  m-r-30">
                     <i class="fa fa-user-plus m-r-10"></i>
-                    Roles
+                    Back
                 </a>
             </div>
 

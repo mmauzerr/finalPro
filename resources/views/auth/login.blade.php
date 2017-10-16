@@ -65,5 +65,9 @@
 
         </div>
     </div>
-
+    <script type="application/javascript">
+        var autopass = false;
+        var rols = '';
+        var perm = [];
+    </script>
 @endsection

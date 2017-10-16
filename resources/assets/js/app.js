@@ -1,14 +1,10 @@
+//noinspection JSUnresolvedFunction
 require('./bootstrap');
 
 window.Vue = require('vue');
 import Buefy from 'buefy'
 
 Vue.use(Buefy);
-
-// Profile right nav-menu toggle OPEN|CLOSE class
-$('button.dropdown').hover(function(){
-    $(this).toggleClass("is-open");
-});
 
 var app= new Vue({
 
@@ -37,4 +33,3 @@ var app= new Vue({
     }
 
 });
-

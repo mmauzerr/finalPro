@@ -28,10 +28,15 @@ table.table {
   margin:15px 20px;
 }
 
-.nav.has-shadow {
+.navbar {
+  //display: inline-block;
+}
+
+.navbar.has-shadow {
   position: fixed;
   top: 0;
   background-color: lightgray;
   width: 1920px;
   max-width:100%;
+  z-index: 1000;
 }
