@@ -51,9 +51,3 @@
         var autopass = false;
     </script>
 @endsection
-
-{{--@section('testing')--}}
-    {{--<script>--}}
-        {{--alert('Welcome');--}}
-    {{--</script>--}}
-{{--@yield('testing')--}}

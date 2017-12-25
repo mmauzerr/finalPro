@@ -3,22 +3,23 @@
 namespace App\Providers;
 
 use App\User;
+use App\Observers\UserObserver;
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+class ObserverServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap any application services.
+     * Bootstrap the application services.
      *
      * @return void
      */
     public function boot()
     {
-        //
+        User::observe(UserObserver::class);
     }
 
     /**
-     * Register any application services.
+     * Register the application services.
      *
      * @return void
      */

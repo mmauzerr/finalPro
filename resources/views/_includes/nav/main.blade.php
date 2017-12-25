@@ -4,6 +4,15 @@
             <a class="navbar-item is-paddingless" href="{{ route('home') }}">
                 <img style="margin-left: -10px" src="{{asset('images/logo.png')}}" alt="FinalPro logo">
             </a>
+
+            @if( Request::segment(1) == 'manage' )
+                <button class="navbar-item is-hidden-desktop" id="admin-slideout-button">
+                    <span class="icon">
+                        <i class="fa fa-arrow-circle-o-right"></i>
+                    </span>
+                </button>
+            @endif
+
             <button class="button navbar-burger">
                 <span></span>
                 <span></span>

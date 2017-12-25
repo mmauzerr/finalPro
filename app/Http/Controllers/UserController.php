@@ -76,7 +76,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::where('id', $id)->with('roles')->first();
-        return view("manage.users.show")->withUser($user);
+        return view('manage.users.show')->withUser($user);
     }
     /**
      * Show the form for editing the specified resource.

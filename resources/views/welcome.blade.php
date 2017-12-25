@@ -78,16 +78,16 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
+                <div class="title m-b-md" style="color: #3e3e3e">
                     Final Pro.nenmas
                 </div>
 
-                <div class="links">
-                    <a href="#">Learning</a>
-                    <a href="#">Discuss</a>
-                    <a href="#">Share</a>
+                {{--<div class="links">--}}
+                    {{--<a href="#">Learning</a>--}}
+                    {{--<a href="#">Discuss</a>--}}
+                    {{--<a href="#">Share</a>--}}
 
-                </div>
+                {{--</div>--}}
             </div>
         </div>
     </body>

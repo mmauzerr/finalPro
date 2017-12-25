@@ -1,18 +1,60 @@
-.side-menu {
+
+.fa, .icon .mdi {
+  font-size: 22px;
+}
+
+#admin-side-menu {
   position: fixed;
   height: 80vh;
   top: 75px;
-  //margin-top: 2px;
+  left: -175px;
   padding-top: 2px;
   width: 175px;
   background-color: white;
+  //overflow-y: scroll;
+  transition: left .3s;
+  &.is-active {
+    transition: left .3s easy-in-out;
+    left:0;
+  }
+  @include desktop {
+    left: 0;
+  }
 }
 
+#admin-slideout-button {
+  margin-top: 5px;
+  border: none;
+  outline: none;
+  transition: 0.3s;
+  &.is-active {
+    transition: 0.3s;
+    transform: rotateY(180deg);
+  }
+}
+
+#admin-slideout-button.is-active{
+  border: none;
+  outline: none;
+}
 .management-area {
   position: absolute;
   top: 4rem;
-  left: 200px;
+  left: 0;
   right: 0;
+
+  @include desktop {
+    left: 200px;
+  }
+
+}
+
+.media-content {
+  width:100%;
+}
+
+.columns.is-mobile {
+  display: block;
 }
 
 .submenu {
@@ -39,10 +81,6 @@ table.table {
   margin:15px 20px;
 }
 
-.navbar {
-  //display: inline-block;
-}
-
 .navbar.has-shadow {
   position: fixed;
   top: 0;
@@ -50,4 +88,67 @@ table.table {
   width: 1920px;
   max-width:100%;
   z-index: 1000;
+}
+
+.textarea:not([rows]) {
+  min-height: 300px;
+}
+
+.widget-area {
+  min-height: 75px;
+  padding: 10px;
+  border-bottom: 1px solid rgba(10, 10, 10, 0.1);
+
+  &.author-widget {
+    .selected-author {
+      display: flex;
+      align-content: flex-start;
+      img {
+        border-radius: 25px;
+      }
+      .author {
+        margin: auto 0 auto 10px;
+        .subtitle {
+          font-weight: 300;
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+  &.post-status-widget {
+    .status {
+      display: flex;
+      align-content: flex-start;
+      .status-icon {
+        min-width: 50px;
+        .icon {
+          width: 100%;
+          i {
+            text-align: center;
+          }
+        }
+      }
+      .status-details {
+        margin-left: 10px;
+        h4 {
+          font-weight: 400;
+          span.status-emphasis {
+            font-weight: 800;
+          }
+        }
+        p {
+          font-weight: 300;
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+  &.publish-buttons-widget {
+    display: flex;
+    min-height: 50px;
+    .primary-action-button, .secondary-action-button {
+      flex: 1;
+      margin: 0 5px;
+    }
+  }
 }

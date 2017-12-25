@@ -30,9 +30,6 @@ h1.title {
 
 .navbar-item.is-paddingless:hover {
   background-color: transparent;
-  width: 94%;
-  margin-left:3px;
-  margin-right: -3px;
 }
 
 .navbar-item.has-dropdown:hover > .navbar-link{
@@ -96,6 +93,9 @@ button.navbar-item {
   max-height: 3.7rem;
 }
 
+.navbar-burger {
+  border: none;
+}
 /***  Remove outline color from profile button - nenMas ***/
 .navbar-item button.is-tab, button.navbar-item.is-tab:focus {
   outline: none;
