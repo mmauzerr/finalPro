@@ -28,7 +28,7 @@ class HomeController extends Controller
         LaraFlash::success('Yay it worked!');
 //      LaraFlash::danger('Oops Something went wrong!')->keep();
 
-        return redirect()->route('manage.dashboard');
+        return view('home');
 
     }
 }
