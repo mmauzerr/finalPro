@@ -33,7 +33,7 @@
             @else
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
-                        Hey&nbsp;&nbsp;{{ Auth::user()->name }}
+                        Hey &nbsp;&nbsp;<i class="user-name">{{ Auth::user()->name }}</i>
                     </a>
                     <div class="navbar-dropdown is-right">
                         <a href="#" class="navbar-item">

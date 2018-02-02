@@ -85,6 +85,8 @@
         var rols = [];
         var autopass = false;
         var perm = {!!($role->permissions->pluck('id'))!!};
+        var api_component = '';
+        var slug = '';
     </script>
     @yield('checkbox')
 

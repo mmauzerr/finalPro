@@ -5,3 +5,28 @@
   background: -moz-linear-gradient(right,rgba(15, 40, 36, 0.08) 10%, white); /* For Firefox 3.6 to 15 */
   background: linear-gradient(to right,rgba(15, 40, 36, 0.08) 10%, white); /* Standard syntax */
 }
+
+.user-name {
+  background-color: rgba(211, 211, 211, 0.42);
+  padding: 5px;
+  -webkit-transition: padding 2s;
+  transition: padding 0.1s;
+}
+
+.user-name:hover {
+  padding: 25px 5px
+}
+
+.pagination {
+  margin-top: 0.5rem;
+  padding: 0 20rem;
+  background-color: rgba(0, 196, 199, 0.08);
+  a {
+    font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    font-size: larger;
+  }
+  .active {
+    opacity: 0.6;
+  }
+}
+

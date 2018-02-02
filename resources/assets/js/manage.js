@@ -2,11 +2,14 @@ const accordions = document.getElementsByClassName('has-submenu');
 const adminSlideButton = document.getElementById('admin-slideout-button');
 
 window.onload = function(){
-    adminSlideButton.onclick = function () {
-            this.classList.toggle('is-active');
-        document.getElementById('admin-side-menu').classList.toggle('is-active');
-    };
+    if (this.load) {
+        adminSlideButton.onclick = function () {
+                this.classList.toggle('is-active');
+            document.getElementById('admin-side-menu').classList.toggle('is-active');
+        };
+    }
 };
+
 
 function setSubmenuStyles (submenu, maxHeight, margins) {
     submenu.style.maxHeight = maxHeight;

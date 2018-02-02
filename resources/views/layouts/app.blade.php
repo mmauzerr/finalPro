@@ -26,11 +26,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
 
 <!-- Scripts -->
-    <script type="application/javascript">
-        var perm = [];
-        var rols = '';
-        var autopass = false;
-    </script>
+    @include('_includes.notifications.toast')
 
     @yield('scripts')
 </body>

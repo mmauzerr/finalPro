@@ -166,6 +166,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
 
+
         /*
          * Package Service Providers...
          */
@@ -184,6 +185,7 @@ return [
          * Third Part Service Providers...
          */
         Laratrust\LaratrustServiceProvider::class,
+        DevMarketer\LaraFlash\LaraFlashServiceProvider::class,
     ],
 
     /*
@@ -233,6 +235,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'LaraFlash' => DevMarketer\LaraFlash\LaraFlashFacade::class,
 
     ],
 

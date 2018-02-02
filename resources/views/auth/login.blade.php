@@ -41,9 +41,7 @@
                             @endif
                         </div>
 
-                        <b-checkbox tabindex="3"
-                                    name="remember"
-                                    class="m-t-20">
+                        <b-checkbox tabindex="3" name="remember" class="m-t-20">
                             Remember Me
                         </b-checkbox>
 
@@ -69,5 +67,7 @@
         var autopass = false;
         var rols = '';
         var perm = [];
+        var api_component = '';
+        var slug = '';
     </script>
 @endsection

@@ -21,20 +21,6 @@
                     <li><a href="{{route('permissions.index')}}" class="{{Nav::isRoute('permissions.index')}}">Permissions</a></li>
                 </ul>
             </li>
-            <li>
-                <a class="has-submenu">Example Accordion</a>
-                <ul class="submenu">
-                    <li><a href="{{route('roles.index')}}">Roles</a></li>
-                    <li><a href="{{route('permissions.index')}}">Permissions</a></li>
-                </ul>
-            </li>
-            <li>
-                <a class="has-submenu">Another Example</a>
-                <ul class="submenu">
-                    <li><a href="{{route('roles.index')}}">Roles</a></li>
-                    <li><a href="{{route('permissions.index')}}">Permissions</a></li>
-                </ul>
-            </li>
         </ul>
     </aside>
 </div>

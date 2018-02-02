@@ -18,17 +18,13 @@
                     <b-field>
                         <b-input type="text" placeholder="Post Title" size="is-large" v-model="title"></b-input>
                     </b-field>
-
-
                     <slug-widget
-                        url="{{url('/')}}"
-                        subdirectory="/blog/"
-                        :title="title"
-                        @slug-changed="updateSlug"
+                            url="{{url('/')}}"
+                            subdirectory="/blog/"
+                            :title="title"
+                            @slug-changed="updateSlug"
                     ></slug-widget>
                     <input type="hidden" v-model="slug" name="slug" />
-
-
                     <b-field class="m-t-40">
                         <b-input type="textarea" placeholder="Compose your masterpiece..."></b-input>
                     </b-field>
@@ -75,9 +71,13 @@
 
         </form>
     </div><!-- end of flex-container div -->
+
     <script type="application/javascript">
         var perm = [];
         var autopass = false;
         var rols = [];
+        var api_component = {!! json_encode(Auth::user()->api_token) !!};
+        var slug = slug;
+
     </script>
 @endsection

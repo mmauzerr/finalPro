@@ -64,5 +64,6 @@
         var perm = [];
         var autopass = true;
         var rols = [{!! old('roles') ? old('roles') : '' !!}];
+        var api_token = '{{Auth::user()->api_token}}'
     </script>
 @endsection

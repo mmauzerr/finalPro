@@ -47,5 +47,7 @@
         var perm = [];
         var autopass = false;
         var rols = [];
+        var api_component = '';
+        var slug = '';
     </script>
 @endsection

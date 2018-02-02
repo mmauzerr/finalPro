@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use LaraFlash;
 
 class HomeController extends Controller
 {
@@ -14,7 +15,6 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-
     /**
      * Show the application dashboard.
      *
@@ -22,6 +22,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+//      LaraFlash::add()->content('Hello World')->priority(6)->type('Info');
+//      LaraFlash::snackbar('Click to continue')->priority(3);
+        LaraFlash::success('Yay it worked!');
+//      LaraFlash::danger('Oops Something went wrong!')->keep();
         return view('home');
+
     }
 }

@@ -75,8 +75,10 @@
 
 @section('checkbox')
     <script type="application/javascript">
-        var rols = {{$user->roles->pluck('id')}};
+        var rols = {!!$user->roles->pluck('id')!!};
         var perm = [];
         var autopass = false;
+        var api_component = '';
+        var slug = '';
     </script>
     @yield('checkbox')

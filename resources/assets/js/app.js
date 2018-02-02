@@ -14,7 +14,7 @@ Vue.use(Buefy);
 //noinspection JSUnresolvedFunction
 Vue.component('slugWidget', require('./components/slugWidget.vue'));
 
-var app= new Vue({
+var app = new Vue({
 
     el: '#app',
     data: {
@@ -26,7 +26,8 @@ var app= new Vue({
         rolesSelected: rols,
         permissionsSelected: perm,
         title: '',
-        slug: ''
+        api_token: api_component,
+        slug: slug
     },
     methods: {
         crudName: function(item) {
