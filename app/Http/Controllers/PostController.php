@@ -10,7 +10,7 @@ class PostController extends Controller
 
     public function __construct()
     {
-        $this->middleware('role:superadministrator|administrator|editor|author|contributor|');
+        $this->middleware('role:superadministrator|administrator|editor|author|contributor');
     }
 
     /**

@@ -27,7 +27,8 @@ class HomeController extends Controller
 //      LaraFlash::snackbar('Click to continue')->priority(3);
         LaraFlash::success('Yay it worked!');
 //      LaraFlash::danger('Oops Something went wrong!')->keep();
-        return view('home');
+
+        return redirect()->route('manage.dashboard');
 
     }
 }
