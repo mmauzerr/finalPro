@@ -80,14 +80,13 @@
 
 @endsection
 
-@section('checkbox')
-    <script type="application/javascript">
-        var rols = [];
-        var autopass = false;
-        var perm = {!!($role->permissions->pluck('id'))!!};
-        var api_component = '';
-        var slug = '';
+@section('scripts')
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                permissionsSelected: {!!$role->permissions->pluck('id')!!}
+            }
+        });
     </script>
-    @yield('checkbox')
-
-
+@endsection

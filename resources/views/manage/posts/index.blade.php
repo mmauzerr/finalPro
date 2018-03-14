@@ -13,14 +13,5 @@
             </div>
         </div>
         <hr class="m-t-0">
-
-
     </div><!-- end of flex-container div-->
-    <script type="application/javascript">
-        var perm = [];
-        var autopass = false;
-        var rols = [];
-        var api_component = '';
-        var slug = '';
-    </script>
 @endsection

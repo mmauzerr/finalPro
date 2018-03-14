@@ -72,13 +72,14 @@
         </form>
     </div> <!-- end of .flex-container -->
 @endsection
-
-@section('checkbox')
-    <script type="application/javascript">
-        var rols = {!!$user->roles->pluck('id')!!};
-        var perm = [];
-        var autopass = false;
-        var api_component = '';
-        var slug = '';
+@section('scripts')
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                password_options: 'keep',
+                rolesSelected: {!! $user->roles->pluck('id') !!}
+            }
+        });
     </script>
-    @yield('checkbox')
+@endsection

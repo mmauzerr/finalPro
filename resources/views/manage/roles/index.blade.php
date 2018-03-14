@@ -45,11 +45,4 @@
         {{-- Uncomment if use orderBy()->pagination() in RoleController --}}
         {{--{{ $roles->render()}}--}}
     </div>
-    <script type="application/javascript">
-        var perm = [];
-        var rols = [];
-        var autopass = false;
-        var api_component = '';
-        var slug = '';
-    </script>
 @endsection

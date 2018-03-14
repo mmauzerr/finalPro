@@ -6,9 +6,6 @@
 
             <h1 class="title m-t-20">Edit Permission: <em class="is-muted">{{$permission->display_name}}</em></h1>
 
-            <div class="column">
-                <a href="{{ route('permissions.edit', $permission->id) }}" class="button is-primary is-pulled-right"><i class="fa fa-edit m-r-10"></i>Edit Permission</a>
-            </div>
         </div>
         <hr class="m-t-0"/>
 
@@ -37,17 +34,11 @@
             <div class="field">
                 <label for="description" class="label">Description</label>
                 <p class="control">
-                    <input type="text" class="input" name="description" id="description" placeholder="{{$permission->description}}">
+                    <input type="text" class="input" name="description" id="description" placeholder="{{$permission->description}}" value="{{$permission->description}}" >
                 </p>
             </div>
             <button class="button is-primary">Save Changes</button>
+            <a href="{{route('permissions.index')}}" class="button is-primary">Back</a>
         </form>
     </div>
-    <script type="application/javascript">
-        var perm = [];
-        var autopass = false;
-        var rols = [];
-        var api_component = '';
-        var slug = '';
-    </script>
 @endsection

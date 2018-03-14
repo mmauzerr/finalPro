@@ -10,6 +10,13 @@
             <div class="column">
                 <a href="{{route('permissions.edit', $permission    ->id)}}" class="button is-primary is-pulled-right"><i class="fa fa-edit m-r-10"></i>Edit Permission</a>
             </div>
+
+            <div class="noting">
+                <a href="{{route('permissions.index')}}" class="button is-primary  m-r-30">
+                    <i class="fa fa-user-plus m-r-10"></i>
+                    Back
+                </a>
+            </div>
         </div>
         <hr class="m-r-0"/>
 
@@ -36,11 +43,4 @@
             </div>
         </div>
     </div>
-    <script type="application/javascript">
-        var perm = [];
-        var rols = [];
-        var autopass = false;
-        var api_component = '';
-        var slug = '';
-    </script>
 @endsection

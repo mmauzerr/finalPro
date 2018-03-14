@@ -9,25 +9,24 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <link rel="shortcut icon" href="{{ asset('images/favicon.png')}}">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
     @yield('styles')
 </head>
 <body>
 
-    @include('_includes.nav.main')
+@include('_includes.nav.main')
 
-    <div id="app">
-        @yield('content')
-    </div>
-
-    <script src="{{ asset('js/app.js') }}"></script>
-
+<div id="app">
+    @yield('content')
+</div>
 <!-- Scripts -->
-    @include('_includes.notifications.toast')
 
-    @yield('scripts')
+<script src="{{ asset('js/app.js') }}"></script>
+@include('_includes.notifications.toast')
+@yield('toast')
+@yield('scripts')
+
 </body>
 </html>

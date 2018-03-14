@@ -1,4 +1,5 @@
 @extends('layouts.manage')
+
 @section('content')
     <div class="flex-container">
         <div class="columns m-t-20">
@@ -72,12 +73,27 @@
         </form>
     </div><!-- end of flex-container div -->
 
-    <script type="application/javascript">
-        var perm = [];
-        var autopass = false;
-        var rols = [];
-        var api_component = {!! json_encode(Auth::user()->api_token) !!};
-        var slug = slug;
-
-    </script>
 @endsection
+@section('scripts')
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                title: '',
+                slug: '',
+                api_token: '{!!Auth::user()->api_token!!}'
+            },
+            methods: {
+                updateSlug: function(val) {
+                    this.slug = val;
+                },
+                slugCopied: function(type, msg, val) {
+                    notifications.toast(msg, {type: `is-${type}`});
+                }
+            }
+        });
+    </script>
+    @endsection
+
+
+

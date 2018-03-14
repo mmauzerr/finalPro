@@ -81,11 +81,14 @@
         
     </form>
     </div>
-    <script type="application/javascript">
-        var perm = [];
-        var rols = [];
-        var autopass = false;
-        var api_component = '';
-        var slug = '';
+    @endsection
+@section('scripts')
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                permissionType: []
+            }
+        });
     </script>
 @endsection

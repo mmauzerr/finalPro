@@ -63,4 +63,5 @@
             </div>
             {{--<h5 class="has-text-centered m-t-10"><a href="{{ route('login')}}" class="is-muted">Already have an Account.</a></h5>--}}
         </div>
+    </div>
 @endsection

@@ -30,3 +30,22 @@
   }
 }
 
+pre {
+  background-color: transparent;
+}
+
+.panel-heading {
+  border-radius: 24px 3px 24px 3px;
+  box-shadow: 0px 2px 4px grey;
+}
+
+#test-flash input{
+  padding: 5px;
+}
+
+#test-flash button {
+  position: absolute;
+  margin-top: -25px;
+  margin-left: 150px;
+}
+

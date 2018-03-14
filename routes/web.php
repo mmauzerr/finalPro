@@ -27,3 +27,5 @@ Route::prefix('manage')->middleware('role:superadministrator|administrator|edito
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/submitdata', 'HomeController@testflash');

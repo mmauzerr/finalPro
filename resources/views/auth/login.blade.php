@@ -41,7 +41,7 @@
                             @endif
                         </div>
 
-                        <b-checkbox tabindex="3" name="remember" class="m-t-20">
+                        <b-checkbox tabindex="3" name="remember" class="m-t-20" checked>
                             Remember Me
                         </b-checkbox>
 
@@ -63,11 +63,11 @@
 
         </div>
     </div>
-    <script type="application/javascript">
-        var autopass = false;
-        var rols = '';
-        var perm = [];
-        var api_component = '';
-        var slug = '';
+@endsection
+@section('scripts')
+    <script>
+        var app = new Vue({
+            el: '#app'
+        });
     </script>
 @endsection

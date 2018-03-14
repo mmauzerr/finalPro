@@ -60,10 +60,15 @@
         <hr class="m-t-0">
 
     </div>
-    <script type="application/javascript">
-        var perm = [];
-        var autopass = true;
-        var rols = [{!! old('roles') ? old('roles') : '' !!}];
-        var api_token = '{{Auth::user()->api_token}}'
-    </script>
 @endsection
+@section('scripts')
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                auto_password: true,
+                rolesSelected: [{!! old('roles') ? old('roles') : '' !!}]
+            }
+        });
+    </script>
+    @endsection
